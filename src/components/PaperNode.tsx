@@ -47,16 +47,34 @@ export const PaperNode = memo(({ data, selected }: PaperNodeProps) => {
           border: `2px solid ${colors.border}`,
           borderRadius: '8px',
           padding: '16px',
-          minWidth: '250px',
+          width: '280px',
+          height: '180px',
           boxShadow: selected
             ? '0 0 0 2px #3b82f6, 0 4px 12px rgba(0,0,0,0.15)'
             : '0 2px 8px rgba(0,0,0,0.1)',
           cursor: 'pointer',
           transition: 'all 0.2s',
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden',
         }}
       >
         {/* Title */}
-        <h3 style={{ fontWeight: 600, fontSize: '14px', margin: 0, marginBottom: '12px' }}>
+        <h3
+          style={{
+            fontWeight: 600,
+            fontSize: '14px',
+            margin: 0,
+            marginBottom: '12px',
+            lineHeight: '1.4',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            display: '-webkit-box',
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: 'vertical',
+            wordBreak: 'break-word',
+          }}
+        >
           {paper.title}
         </h3>
 
@@ -71,6 +89,7 @@ export const PaperNode = memo(({ data, selected }: PaperNodeProps) => {
             color: colors.text,
             border: `1px solid ${colors.border}`,
             marginBottom: paper.url ? '8px' : 0,
+            alignSelf: 'flex-start',
           }}
         >
           {statusLabels[paper.status]}
@@ -78,7 +97,7 @@ export const PaperNode = memo(({ data, selected }: PaperNodeProps) => {
 
         {/* Link to paper */}
         {paper.url && (
-          <div style={{ marginTop: '8px' }}>
+          <div style={{ marginTop: 'auto' }}>
             <a
               href={paper.url}
               target="_blank"
@@ -87,6 +106,10 @@ export const PaperNode = memo(({ data, selected }: PaperNodeProps) => {
                 fontSize: '12px',
                 color: '#3b82f6',
                 textDecoration: 'none',
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                display: 'block',
               }}
               onClick={(e) => e.stopPropagation()}
             >

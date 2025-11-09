@@ -5,51 +5,460 @@
       "title": "Attention Is All You Need",
       "authors": "Vaswani et al.",
       "year": 2017,
+      "venue": "NeurIPS",
+      "status": "reading",
+      "priority": "HIGH",
+      "dependencies": [
+        "paper-1762685151528",
+        "paper-1762685204616",
+        "paper-1762686486962"
+      ],
+      "dagPosition": {
+        "x": 1365,
+        "y": 2200
+      },
       "url": "https://arxiv.org/abs/1706.03762",
       "description": "Introduces the Transformer architecture",
-      "status": "completed",
-      "priority": "HIGH",
-      "dependencies": [],
       "topicId": "topic-1",
-      "dagPosition": null,
-      "tags": ["transformers", "attention"],
-      "venue": "NeurIPS",
+      "tags": [
+        "transformers",
+        "attention"
+      ],
       "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2024-01-15T00:00:00Z"
-    },
-    {
-      "id": "paper-2",
-      "title": "BERT: Pre-training of Deep Bidirectional Transformers",
-      "authors": "Devlin et al.",
-      "year": 2019,
-      "url": "https://arxiv.org/abs/1810.04805",
-      "description": "Bidirectional pre-training for language understanding",
-      "status": "completed",
-      "priority": "HIGH",
-      "dependencies": ["paper-1"],
-      "topicId": "topic-1",
-      "dagPosition": null,
-      "tags": ["bert", "pretraining"],
-      "venue": "NAACL",
-      "createdAt": "2024-01-05T00:00:00Z",
-      "updatedAt": "2024-01-20T00:00:00Z"
+      "updatedAt": "2025-11-09T10:45:37.664Z"
     },
     {
       "id": "paper-3",
       "title": "GPT-3: Language Models are Few-Shot Learners",
       "authors": "Brown et al.",
       "year": 2020,
+      "venue": "NeurIPS",
+      "status": "to_read",
+      "priority": "HIGH",
+      "dependencies": [
+        "paper-1",
+        "paper-2"
+      ],
+      "dagPosition": {
+        "x": 1365,
+        "y": 2620
+      },
       "url": "https://arxiv.org/abs/2005.14165",
       "description": "Few-shot learning with large language models",
-      "status": "reading",
-      "priority": "HIGH",
-      "dependencies": ["paper-1", "paper-2"],
       "topicId": "topic-1",
-      "dagPosition": null,
-      "tags": ["gpt", "few-shot", "llm"],
-      "venue": "NeurIPS",
+      "tags": [
+        "gpt",
+        "few-shot",
+        "llm"
+      ],
       "createdAt": "2024-01-10T00:00:00Z",
-      "updatedAt": "2024-02-01T00:00:00Z"
+      "updatedAt": "2025-11-09T10:43:55.823Z"
+    },
+    {
+      "id": "paper-1762684785288",
+      "title": "Fundamentals of RNN and LSTM",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [],
+      "dagPosition": {
+        "x": 960,
+        "y": 940
+      },
+      "url": "https://www.alphaxiv.org/abs/1808.03314",
+      "createdAt": "2025-11-09T10:39:45.288Z",
+      "updatedAt": "2025-11-09T10:48:59.640Z"
+    },
+    {
+      "id": "paper-1762685076129",
+      "title": "NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762684785288"
+      ],
+      "dagPosition": {
+        "x": 960,
+        "y": 1360
+      },
+      "url": "https://www.alphaxiv.org/abs/1409.0473",
+      "createdAt": "2025-11-09T10:44:36.129Z",
+      "updatedAt": "2025-11-09T10:44:49.139Z"
+    },
+    {
+      "id": "paper-1762685151528",
+      "title": "Key-Value Memory Networks for Directly Reading Documents",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762685076129"
+      ],
+      "dagPosition": {
+        "x": 960,
+        "y": 1780
+      },
+      "url": "https://www.alphaxiv.org/abs/1606.03126",
+      "createdAt": "2025-11-09T10:45:51.528Z",
+      "updatedAt": "2025-11-09T10:46:01.209Z"
+    },
+    {
+      "id": "paper-1762685204616",
+      "title": "ConvS2S",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "reading",
+      "priority": "MED",
+      "dependencies": [],
+      "dagPosition": {
+        "x": 1820,
+        "y": 1780
+      },
+      "url": "https://arxiv.org/pdf/1705.03122",
+      "createdAt": "2025-11-09T10:46:44.616Z",
+      "updatedAt": "2025-11-09T10:46:56.903Z"
+    },
+    {
+      "id": "paper-1762685372135",
+      "title": "Deep Unlearning",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762685625942",
+        "paper-1762685836981"
+      ],
+      "dagPosition": {
+        "x": 315,
+        "y": 520
+      },
+      "url": "https://arxiv.org/abs/2312.00761",
+      "createdAt": "2025-11-09T10:49:32.135Z",
+      "updatedAt": "2025-11-09T10:49:40.512Z"
+    },
+    {
+      "id": "paper-1762685464350",
+      "title": "Annealed Importance Sampling",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [],
+      "dagPosition": {
+        "x": 960,
+        "y": 100
+      },
+      "url": "https://arxiv.org/abs/physics/9803008",
+      "createdAt": "2025-11-09T10:51:04.350Z",
+      "updatedAt": "2025-11-09T10:51:22.461Z"
+    },
+    {
+      "id": "paper-1762685509310",
+      "title": "Denoising diffusion probabilistic models",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "reading",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762685464350"
+      ],
+      "dagPosition": {
+        "x": 960,
+        "y": 520
+      },
+      "url": "https://arxiv.org/abs/2006.11239",
+      "createdAt": "2025-11-09T10:51:49.310Z",
+      "updatedAt": "2025-11-09T10:52:02.521Z"
+    },
+    {
+      "id": "paper-1762685625942",
+      "title": "Gradient projection memory for continual learning.",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [],
+      "dagPosition": {
+        "x": 100,
+        "y": 100
+      },
+      "url": "https://openreview.net/forum?id=3AOj0RCNC2",
+      "createdAt": "2025-11-09T10:53:45.942Z",
+      "updatedAt": "2025-11-09T10:53:54.783Z"
+    },
+    {
+      "id": "paper-1762685730711",
+      "title": "Recursive model index",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [],
+      "dagPosition": {
+        "x": 1390,
+        "y": 100
+      },
+      "url": "https://dl.acm.org/doi/pdf/10.1145/3183713.3196909",
+      "createdAt": "2025-11-09T10:55:30.711Z",
+      "updatedAt": "2025-11-09T10:55:39.399Z"
+    },
+    {
+      "id": "paper-1762685753830",
+      "title": "Adaptive Learned Index",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762685730711"
+      ],
+      "dagPosition": {
+        "x": 1390,
+        "y": 520
+      },
+      "url": "https://dl.acm.org/doi/pdf/10.1145/3318464.3389711",
+      "createdAt": "2025-11-09T10:55:53.830Z",
+      "updatedAt": "2025-11-09T10:56:04.813Z"
+    },
+    {
+      "id": "paper-1762685836981",
+      "title": "Boundary Unlearning",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [],
+      "dagPosition": {
+        "x": 530,
+        "y": 100
+      },
+      "url": "https://arxiv.org/abs/2303.11570",
+      "createdAt": "2025-11-09T10:57:16.981Z",
+      "updatedAt": "2025-11-09T10:57:25.726Z"
+    },
+    {
+      "id": "paper-1762685996732",
+      "title": "Fast Yet Effective Machine Unlearning",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762685372135"
+      ],
+      "dagPosition": {
+        "x": 315,
+        "y": 940
+      },
+      "url": "https://arxiv.org/abs/2111.08947",
+      "createdAt": "2025-11-09T10:59:56.732Z",
+      "updatedAt": "2025-11-09T11:00:07.854Z"
+    },
+    {
+      "id": "paper-1762686068820",
+      "title": "Zero shot machine Unlearning",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762685996732"
+      ],
+      "dagPosition": {
+        "x": 315,
+        "y": 1360
+      },
+      "url": "https://arxiv.org/abs/2201.05629",
+      "createdAt": "2025-11-09T11:01:08.820Z",
+      "updatedAt": "2025-11-09T11:01:20.373Z"
+    },
+    {
+      "id": "paper-1762686183996",
+      "title": "Deep Neural Networks are Easily Fooled: High Confidence Predictions for Unrecognizable Images",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762686068820"
+      ],
+      "dagPosition": {
+        "x": 315,
+        "y": 1780
+      },
+      "url": "https://arxiv.org/abs/1412.1897",
+      "createdAt": "2025-11-09T11:03:03.996Z",
+      "updatedAt": "2025-11-09T11:03:16.725Z"
+    },
+    {
+      "id": "paper-1762686239636",
+      "title": "Understanding Deep Image Representations by Inverting Them",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762686183996"
+      ],
+      "dagPosition": {
+        "x": 290,
+        "y": 2200
+      },
+      "url": "https://arxiv.org/abs/1412.0035",
+      "createdAt": "2025-11-09T11:03:59.636Z",
+      "updatedAt": "2025-11-09T11:04:20.055Z"
+    },
+    {
+      "id": "paper-1762686313195",
+      "title": "Dream To Distill",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762686183996",
+        "paper-1762686486962"
+      ],
+      "dagPosition": {
+        "x": 910,
+        "y": 2200
+      },
+      "url": "https://arxiv.org/abs/1912.08795",
+      "createdAt": "2025-11-09T11:05:13.195Z",
+      "updatedAt": "2025-11-09T11:05:23.757Z"
+    },
+    {
+      "id": "paper-1762686365043",
+      "title": "Re-thinking Model Inversion Attacks Against Deep Neural Networks",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762686239636",
+        "paper-1762686313195"
+      ],
+      "dagPosition": {
+        "x": 505,
+        "y": 2620
+      },
+      "url": "https://arxiv.org/abs/2304.01669",
+      "createdAt": "2025-11-09T11:06:05.043Z",
+      "updatedAt": "2025-11-09T11:06:15.595Z"
+    },
+    {
+      "id": "paper-1762686486962",
+      "title": "Batch Normalization",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [],
+      "dagPosition": {
+        "x": 1390,
+        "y": 1780
+      },
+      "url": "https://arxiv.org/abs/1502.03167",
+      "createdAt": "2025-11-09T11:08:06.962Z",
+      "updatedAt": "2025-11-09T11:08:32.547Z"
+    },
+    {
+      "id": "paper-1762686725240",
+      "title": "Reinforcement Learning: An Introduction",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [],
+      "dagPosition": {
+        "x": 2035,
+        "y": 100
+      },
+      "url": "https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf",
+      "createdAt": "2025-11-09T11:12:05.240Z",
+      "updatedAt": "2025-11-09T11:12:17.226Z"
+    },
+    {
+      "id": "paper-1762686775050",
+      "title": "Deterministic Policy Gradient Algorithms",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "reading",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762686725240",
+        "paper-1762687258794"
+      ],
+      "dagPosition": {
+        "x": 2250,
+        "y": 940
+      },
+      "url": "https://proceedings.mlr.press/v32/silver14.pdf",
+      "createdAt": "2025-11-09T11:12:55.050Z",
+      "updatedAt": "2025-11-09T11:13:19.137Z"
+    },
+    {
+      "id": "paper-1762686954897",
+      "title": "Playing Atari with Deep Reinforcement Learning",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "to_read",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762686725240"
+      ],
+      "dagPosition": {
+        "x": 1820,
+        "y": 520
+      },
+      "url": "https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf",
+      "createdAt": "2025-11-09T11:15:54.897Z",
+      "updatedAt": "2025-11-09T11:16:08.232Z"
+    },
+    {
+      "id": "paper-1762687258794",
+      "title": "Policy Gradient Methods for  Reinforcement Learning with Function  Approximation ",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "reading",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762686725240"
+      ],
+      "dagPosition": {
+        "x": 2250,
+        "y": 520
+      },
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf",
+      "createdAt": "2025-11-09T11:20:58.794Z",
+      "updatedAt": "2025-11-09T11:21:17.169Z"
     }
   ],
   "topics": [

@@ -40,32 +40,30 @@ function ResearchPapersContent() {
   const hasLayoutedRef = useRef(false);
   const isDraggingRef = useRef(false);
 
-  // Auto-save to localStorage whenever data changes (dev mode only)
+  // Auto-save to papers.json via API whenever data changes (dev mode only)
   useEffect(() => {
     if (isDev && data) {
-      localStorage.setItem('papers-data', JSON.stringify(data));
-      console.log('💾 Auto-saved to localStorage');
+      // Save to API endpoint
+      fetch('http://localhost:3001/api/papers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+        .then((res) => {
+          if (res.ok) {
+            console.log('💾 Auto-saved to papers.json');
+          }
+        })
+        .catch((err) => {
+          console.error('Failed to save:', err);
+        });
     }
   }, [data, isDev]);
 
   // Load papers data
   useEffect(() => {
-    // Try to load from localStorage first (dev mode only)
-    if (isDev) {
-      const savedData = localStorage.getItem('papers-data');
-      if (savedData) {
-        try {
-          const parsedData = JSON.parse(savedData);
-          setData(parsedData);
-          setLoading(false);
-          console.log('✅ Loaded data from localStorage');
-          return;
-        } catch (err) {
-          console.error('Failed to parse saved data:', err);
-        }
-      }
-    }
-
     // Load from papers.json
     fetch('/papers.json')
       .then((res) => res.json())
@@ -77,7 +75,7 @@ function ResearchPapersContent() {
         console.error('Failed to load papers:', err);
         setLoading(false);
       });
-  }, [isDev]);
+  }, []);
 
   // Convert papers to nodes and edges (similar to DAGView)
   const { reactFlowNodes, reactFlowEdges } = useMemo(() => {
@@ -330,8 +328,7 @@ function ResearchPapersContent() {
   const handleResetData = useCallback(() => {
     if (!isDev) return;
     
-    if (confirm('⚠️ Reset to original papers.json? This will discard all local changes.')) {
-      localStorage.removeItem('papers-data');
+    if (confirm('⚠️ Reload papers.json from disk?')) {
       window.location.reload();
     }
   }, [isDev]);
