@@ -6,34 +6,34 @@ export function Home() {
     <div className="home-container">
       <header>
         <h1>Harsha Narayana P</h1>
-        <p>Software Engineer at Microsoft IDC Hyderabad. ML enthusiast.</p>
+        <p>Software Engineer at <b>Microsoft</b> IDC Hyderabad.<br/> AI and problem solving enthusiast.</p>
       </header>
 
       <section>
         <h2>About</h2>
         <p>
-          I'm a software engineer passionate about machine learning and building 
-          scalable systems. Currently working at Microsoft IDC Hyderabad.
+          Passionate about AI, software development, and problem solving.
+          <br/>
+          B.Tech in Computer Science from <b>NIT Surathkal</b> (2025, 9.07 CGPA).
         </p>
       </section>
 
       <section>
         <h2>Projects</h2>
         <ul>
-          <li>Task Dependency Manager - Interactive DAG visualization tool</li>
-          <li>Research Papers Reading Graph - Track paper dependencies</li>
-          <li>More coming soon...</li>
+          <li><a href="https://github.com/GittyHarsha/AgentMemory" target="_blank" rel="noopener noreferrer">AgentMemory MCP server</a>: An MCP server to manage agentic memory</li>
         </ul>
       </section>
-
-      <section>
-        <h2>Research</h2>
-        <p>
-          <Link to="/research" className="research-link">
-            View Interactive Reading Graph →
-          </Link>
-        </p>
-      </section>
+    <section>
+      <h2>Research</h2>
+      <p>
+        Machine Unlearning research focusing on <strong>Zero Shot Class Unlearning</strong>: 
+        Removing classes from classification models without retraining or accessing training data.
+      </p>
+      <Link to="/research" className="research-link">
+        View the Research papers I am reading →
+      </Link>
+    </section>
 
       <section>
         <h2>Contact</h2>
