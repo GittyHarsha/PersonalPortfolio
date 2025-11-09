@@ -40,8 +40,33 @@ function ResearchPapersContent() {
   const hasLayoutedRef = useRef(false);
   const isDraggingRef = useRef(false);
 
+  // Auto-save to localStorage whenever data changes (dev mode only)
+  useEffect(() => {
+    if (isDev && data) {
+      localStorage.setItem('papers-data', JSON.stringify(data));
+      console.log('💾 Auto-saved to localStorage');
+    }
+  }, [data, isDev]);
+
   // Load papers data
   useEffect(() => {
+    // Try to load from localStorage first (dev mode only)
+    if (isDev) {
+      const savedData = localStorage.getItem('papers-data');
+      if (savedData) {
+        try {
+          const parsedData = JSON.parse(savedData);
+          setData(parsedData);
+          setLoading(false);
+          console.log('✅ Loaded data from localStorage');
+          return;
+        } catch (err) {
+          console.error('Failed to parse saved data:', err);
+        }
+      }
+    }
+
+    // Load from papers.json
     fetch('/papers.json')
       .then((res) => res.json())
       .then((jsonData: AppData) => {
@@ -52,7 +77,7 @@ function ResearchPapersContent() {
         console.error('Failed to load papers:', err);
         setLoading(false);
       });
-  }, []);
+  }, [isDev]);
 
   // Convert papers to nodes and edges (similar to DAGView)
   const { reactFlowNodes, reactFlowEdges } = useMemo(() => {
@@ -117,19 +142,7 @@ function ResearchPapersContent() {
       return;
     }
 
-    // Check if we have saved positions
-    const hasValidPositions = reactFlowNodes.some((node) => {
-      const paper = data?.papers.find((p) => p.id === node.id);
-      return paper?.dagPosition && (paper.dagPosition.x !== 0 || paper.dagPosition.y !== 0);
-    });
-
-    if (hasValidPositions && hasLayoutedRef.current) {
-      setNodes(reactFlowNodes);
-      setEdges(reactFlowEdges);
-      return;
-    }
-
-    // Apply auto-layout
+    // Always apply auto-layout when nodes change
     const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
       reactFlowNodes,
       reactFlowEdges,
@@ -310,7 +323,18 @@ function ResearchPapersContent() {
     a.download = 'papers.json';
     a.click();
     URL.revokeObjectURL(url);
+    
+    alert('✅ Papers exported! Replace public/papers.json with the downloaded file to deploy changes.');
   }, [data, nodes]);
+
+  const handleResetData = useCallback(() => {
+    if (!isDev) return;
+    
+    if (confirm('⚠️ Reset to original papers.json? This will discard all local changes.')) {
+      localStorage.removeItem('papers-data');
+      window.location.reload();
+    }
+  }, [isDev]);
 
   // Add new node (dev mode only)
   const handleAddNode = useCallback(() => {
@@ -325,12 +349,12 @@ function ResearchPapersContent() {
       status: 'to_read',
       priority: 'MED',
       dependencies: [],
-      dagPosition: { x: 100, y: 100 },
+      dagPosition: { x: 0, y: 0 },
       createdAt: now,
       updatedAt: now,
     };
 
-    // Add to data
+    // Add to data - this will trigger auto-layout
     setData({
       ...data,
       papers: [...data.papers, newPaper],
@@ -389,7 +413,7 @@ function ResearchPapersContent() {
       status: editForm.status || 'to_read',
       priority: editForm.priority || 'MED',
       dependencies: editForm.dependencies || [],
-      dagPosition: editForm.dagPosition || { x: 0, y: 0 },
+      dagPosition: { x: 0, y: 0 }, // Reset position to trigger layout
       url: editForm.url,
       description: editForm.description,
       topicId: editForm.topicId,
@@ -398,6 +422,7 @@ function ResearchPapersContent() {
       updatedAt: new Date().toISOString(),
     };
 
+    // Update data - this will trigger auto-layout
     setData({
       ...data,
       papers: data.papers.map((p) => (p.id === editingNode ? updatedPaper : p)),
@@ -453,6 +478,9 @@ function ResearchPapersContent() {
               </button>
               <button className="btn btn-primary" onClick={handleExport}>
                 💾 Export JSON
+              </button>
+              <button className="btn" onClick={handleResetData}>
+                🔄 Reset to Original
               </button>
             </>
           )}
@@ -511,6 +539,15 @@ function ResearchPapersContent() {
                 type="text"
                 value={editForm.title || ''}
                 onChange={(e) => setEditForm({ ...editForm, title: e.target.value })}
+              />
+            </div>
+            <div className="form-group">
+              <label>URL:</label>
+              <input
+                type="text"
+                value={editForm.url || ''}
+                onChange={(e) => setEditForm({ ...editForm, url: e.target.value })}
+                placeholder="https://..."
               />
             </div>
             <div className="form-group">

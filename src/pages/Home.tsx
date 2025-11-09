@@ -37,7 +37,7 @@ export function Home() {
 
       <section>
         <h2>Contact</h2>
-        <ul>
+        <ul className="contact-links">
           <li>
             <a href="mailto:hnarayana788@gmail.com">Email</a>
           </li>

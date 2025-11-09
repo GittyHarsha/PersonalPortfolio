@@ -16,12 +16,6 @@ const statusColors: Record<string, { bg: string; border: string; text: string }>
   archived: { bg: '#f9fafb', border: '#9ca3af', text: '#4b5563' },
 };
 
-const priorityColors: Record<string, string> = {
-  HIGH: '#ef4444',
-  MED: '#f59e0b',
-  LOW: '#10b981',
-};
-
 const statusLabels: Record<string, string> = {
   completed: '✓ Completed',
   reading: '📖 Reading',
@@ -61,33 +55,10 @@ export const PaperNode = memo(({ data, selected }: PaperNodeProps) => {
           transition: 'all 0.2s',
         }}
       >
-        {/* Priority indicator */}
-        <div style={{ display: 'flex', alignItems: 'start', gap: '8px', marginBottom: '8px' }}>
-          <div
-            style={{
-              width: '12px',
-              height: '12px',
-              borderRadius: '50%',
-              background: priorityColors[paper.priority],
-              flexShrink: 0,
-              marginTop: '2px',
-            }}
-            title={`${paper.priority} priority`}
-          />
-          <h3 style={{ fontWeight: 600, fontSize: '14px', margin: 0, flex: 1 }}>
-            {paper.title}
-          </h3>
-        </div>
-
-        {/* Authors */}
-        <div style={{ fontSize: '12px', color: '#6b7280', marginBottom: '8px' }}>
-          {paper.authors}
-        </div>
-
-        {/* Venue and year */}
-        <div style={{ fontSize: '12px', color: '#9ca3af', marginBottom: '8px' }}>
-          {paper.venue} ({paper.year})
-        </div>
+        {/* Title */}
+        <h3 style={{ fontWeight: 600, fontSize: '14px', margin: 0, marginBottom: '12px' }}>
+          {paper.title}
+        </h3>
 
         {/* Status badge */}
         <div
@@ -121,26 +92,6 @@ export const PaperNode = memo(({ data, selected }: PaperNodeProps) => {
             >
               View Paper →
             </a>
-          </div>
-        )}
-
-        {/* Tags */}
-        {paper.tags && paper.tags.length > 0 && (
-          <div style={{ display: 'flex', gap: '4px', marginTop: '8px', flexWrap: 'wrap' }}>
-            {paper.tags.slice(0, 3).map((tag) => (
-              <span
-                key={tag}
-                style={{
-                  fontSize: '10px',
-                  padding: '2px 6px',
-                  background: '#f3f4f6',
-                  color: '#6b7280',
-                  borderRadius: '4px',
-                }}
-              >
-                {tag}
-              </span>
-            ))}
           </div>
         )}
       </div>
