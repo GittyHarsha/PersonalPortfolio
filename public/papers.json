@@ -1,0 +1,69 @@
+{
+  "papers": [
+    {
+      "id": "paper-1",
+      "title": "Attention Is All You Need",
+      "authors": "Vaswani et al.",
+      "year": 2017,
+      "url": "https://arxiv.org/abs/1706.03762",
+      "description": "Introduces the Transformer architecture",
+      "status": "completed",
+      "priority": "HIGH",
+      "dependencies": [],
+      "topicId": "topic-1",
+      "dagPosition": null,
+      "tags": ["transformers", "attention"],
+      "venue": "NeurIPS",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-15T00:00:00Z"
+    },
+    {
+      "id": "paper-2",
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers",
+      "authors": "Devlin et al.",
+      "year": 2019,
+      "url": "https://arxiv.org/abs/1810.04805",
+      "description": "Bidirectional pre-training for language understanding",
+      "status": "completed",
+      "priority": "HIGH",
+      "dependencies": ["paper-1"],
+      "topicId": "topic-1",
+      "dagPosition": null,
+      "tags": ["bert", "pretraining"],
+      "venue": "NAACL",
+      "createdAt": "2024-01-05T00:00:00Z",
+      "updatedAt": "2024-01-20T00:00:00Z"
+    },
+    {
+      "id": "paper-3",
+      "title": "GPT-3: Language Models are Few-Shot Learners",
+      "authors": "Brown et al.",
+      "year": 2020,
+      "url": "https://arxiv.org/abs/2005.14165",
+      "description": "Few-shot learning with large language models",
+      "status": "reading",
+      "priority": "HIGH",
+      "dependencies": ["paper-1", "paper-2"],
+      "topicId": "topic-1",
+      "dagPosition": null,
+      "tags": ["gpt", "few-shot", "llm"],
+      "venue": "NeurIPS",
+      "createdAt": "2024-01-10T00:00:00Z",
+      "updatedAt": "2024-02-01T00:00:00Z"
+    }
+  ],
+  "topics": [
+    {
+      "id": "topic-1",
+      "name": "Large Language Models",
+      "color": "#3b82f6",
+      "parentId": null,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    }
+  ],
+  "navigation": {
+    "currentTopicId": null,
+    "expandedTopicIds": []
+  }
+}
