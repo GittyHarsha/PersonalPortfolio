@@ -33,6 +33,8 @@ export function Home() {
       <Link to="/research" className="research-link">
         View the Research papers I am reading →
       </Link>
+      <br/><br/>
+      <a href="https://github.com/GittyHarsha/AiScratchPad" target="_blank" rel="noopener noreferrer">View my collection of jupyter notebooks for learning AI foundations</a>
     </section>
 
       <section>
