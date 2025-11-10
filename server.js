@@ -1,8 +1,12 @@
 // Simple dev server to handle file writes
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const cors = require('cors');
+import express from 'express';
+import fs from 'fs';
+import path from 'path';
+import cors from 'cors';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = 3001;
@@ -28,15 +32,16 @@ app.post('/api/papers', (req, res) => {
   try {
     const data = JSON.stringify(req.body, null, 2);
     fs.writeFileSync(PAPERS_FILE, data, 'utf8');
-    console.log('✅ Saved changes to papers.json');
+    console.log('✅ Saved changes to papers.json at', new Date().toLocaleTimeString());
     res.json({ success: true, message: 'Papers saved successfully' });
   } catch (error) {
-    console.error('Error writing papers.json:', error);
+    console.error('❌ Error writing papers.json:', error);
     res.status(500).json({ error: 'Failed to save papers' });
   }
 });
 
 app.listen(PORT, () => {
-  console.log(`📝 Dev server running on http://localhost:${PORT}`);
+  console.log(`\n📝 Dev server running on http://localhost:${PORT}`);
   console.log(`✅ Ready to save changes to papers.json`);
+  console.log(`📁 File location: ${PAPERS_FILE}\n`);
 });

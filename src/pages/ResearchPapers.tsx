@@ -39,10 +39,11 @@ function ResearchPapersContent() {
   const reactFlowInstance = useReactFlow();
   const hasLayoutedRef = useRef(false);
   const isDraggingRef = useRef(false);
+  const isInitialLoadRef = useRef(true);
 
   // Auto-save to papers.json via API whenever data changes (dev mode only)
   useEffect(() => {
-    if (isDev && data) {
+    if (isDev && data && !isInitialLoadRef.current) {
       // Save to API endpoint
       fetch('http://localhost:3001/api/papers', {
         method: 'POST',
@@ -53,11 +54,14 @@ function ResearchPapersContent() {
       })
         .then((res) => {
           if (res.ok) {
-            console.log('💾 Auto-saved to papers.json');
+            console.log('✅ Auto-saved to papers.json');
+          } else {
+            console.error('❌ Failed to save:', res.statusText);
           }
         })
         .catch((err) => {
-          console.error('Failed to save:', err);
+          console.error('❌ Error saving to papers.json:', err.message);
+          console.log('⚠️ Make sure to run: npm run dev:all');
         });
     }
   }, [data, isDev]);
@@ -70,6 +74,10 @@ function ResearchPapersContent() {
       .then((jsonData: AppData) => {
         setData(jsonData);
         setLoading(false);
+        // Mark initial load complete after a short delay
+        setTimeout(() => {
+          isInitialLoadRef.current = false;
+        }, 500);
       })
       .catch((err) => {
         console.error('Failed to load papers:', err);

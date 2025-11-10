@@ -172,7 +172,8 @@
       "status": "reading",
       "priority": "MED",
       "dependencies": [
-        "paper-1762685464350"
+        "paper-1762685464350",
+        "paper-1762781943320"
       ],
       "dagPosition": {
         "x": 960,
@@ -459,6 +460,42 @@
       "url": "https://proceedings.neurips.cc/paper_files/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf",
       "createdAt": "2025-11-09T11:20:58.794Z",
       "updatedAt": "2025-11-09T11:21:17.169Z"
+    },
+    {
+      "id": "paper-1762781943320",
+      "title": "The Principles of Diffusion Models",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "reading",
+      "priority": "MED",
+      "dependencies": [],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/pdf/2510.21890",
+      "createdAt": "2025-11-10T13:39:03.319Z",
+      "updatedAt": "2025-11-10T13:39:22.471Z"
+    },
+    {
+      "id": "paper-1762781990949",
+      "title": "Fast Inference from Transformers via Speculative Decoding",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "reading",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/abs/2211.17192v2",
+      "createdAt": "2025-11-10T13:39:50.949Z",
+      "updatedAt": "2025-11-10T13:40:01.387Z"
     }
   ],
   "topics": [
