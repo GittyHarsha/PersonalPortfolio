@@ -496,6 +496,63 @@
       "url": "https://arxiv.org/abs/2211.17192v2",
       "createdAt": "2025-11-10T13:39:50.949Z",
       "updatedAt": "2025-11-10T13:40:01.387Z"
+    },
+    {
+      "id": "paper-1763104442771",
+      "title": "TiDAR",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "to_read",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762781990949"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/pdf/2511.08923v1",
+      "createdAt": "2025-11-14T07:14:02.771Z",
+      "updatedAt": "2025-11-14T07:14:09.181Z"
+    },
+    {
+      "id": "paper-1763104491280",
+      "title": "JePA",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "to_read",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762686725240"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://openreview.net/pdf?id=BZ5a1r-kVsf",
+      "createdAt": "2025-11-14T07:14:51.280Z",
+      "updatedAt": "2025-11-14T07:14:56.568Z"
+    },
+    {
+      "id": "paper-1763104530761",
+      "title": "LeJEPA",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "to_read",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1763104491280"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://www.arxiv.org/pdf/2511.08544v2",
+      "createdAt": "2025-11-14T07:15:30.761Z",
+      "updatedAt": "2025-11-14T07:15:38.464Z"
     }
   ],
   "topics": [
