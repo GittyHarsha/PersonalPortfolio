@@ -6,16 +6,17 @@
       "authors": "Vaswani et al.",
       "year": 2017,
       "venue": "NeurIPS",
-      "status": "reading",
+      "status": "completed",
       "priority": "HIGH",
       "dependencies": [
         "paper-1762685151528",
         "paper-1762685204616",
-        "paper-1762686486962"
+        "paper-1762686486962",
+        "paper-1763358402413"
       ],
       "dagPosition": {
-        "x": 1365,
-        "y": 2200
+        "x": 0,
+        "y": 0
       },
       "url": "https://arxiv.org/abs/1706.03762",
       "description": "Introduces the Transformer architecture",
@@ -25,7 +26,7 @@
         "attention"
       ],
       "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-11-09T10:45:37.664Z"
+      "updatedAt": "2025-11-17T05:45:50.485Z"
     },
     {
       "id": "paper-3",
@@ -115,16 +116,16 @@
       "authors": "",
       "year": 2025,
       "venue": "",
-      "status": "reading",
+      "status": "completed",
       "priority": "MED",
       "dependencies": [],
       "dagPosition": {
-        "x": 1820,
-        "y": 1780
+        "x": 0,
+        "y": 0
       },
       "url": "https://arxiv.org/pdf/1705.03122",
       "createdAt": "2025-11-09T10:46:44.616Z",
-      "updatedAt": "2025-11-09T10:46:56.903Z"
+      "updatedAt": "2025-11-17T05:45:40.534Z"
     },
     {
       "id": "paper-1762685372135",
@@ -484,7 +485,7 @@
       "authors": "",
       "year": 2025,
       "venue": "",
-      "status": "reading",
+      "status": "completed",
       "priority": "MED",
       "dependencies": [
         "paper-1"
@@ -495,7 +496,7 @@
       },
       "url": "https://arxiv.org/abs/2211.17192v2",
       "createdAt": "2025-11-10T13:39:50.949Z",
-      "updatedAt": "2025-11-10T13:40:01.387Z"
+      "updatedAt": "2025-11-17T05:45:54.491Z"
     },
     {
       "id": "paper-1763104442771",
@@ -553,6 +554,23 @@
       "url": "https://www.arxiv.org/pdf/2511.08544v2",
       "createdAt": "2025-11-14T07:15:30.761Z",
       "updatedAt": "2025-11-14T07:15:38.464Z"
+    },
+    {
+      "id": "paper-1763358402413",
+      "title": "Deep Residual Learning",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "to_read",
+      "priority": "MED",
+      "dependencies": [],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/abs/1512.03385",
+      "createdAt": "2025-11-17T05:46:42.413Z",
+      "updatedAt": "2025-11-17T05:46:50.502Z"
     }
   ],
   "topics": [
