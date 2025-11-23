@@ -16,6 +16,7 @@ import {
   useReactFlow,
   ReactFlowProvider,
   NodeMouseHandler,
+  ConnectionLineType,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { PaperNode } from '../components/PaperNode';
@@ -113,7 +114,7 @@ function ResearchPapersContent() {
               id: `${depId}::${paper.id}`,
               source: depId,
               target: paper.id,
-              type: 'straight',
+              type: 'smoothstep',
               markerEnd: {
                 type: MarkerType.ArrowClosed,
                 color: '#6b7280',
@@ -155,13 +156,13 @@ function ResearchPapersContent() {
       {
         direction: 'TB',
         nodeWidth: 280,
-        nodeHeight: 200,
-        nodesep: 150,     // Increased horizontal spacing
-        ranksep: 220,     // Increased vertical spacing
-        edgesep: 50,      // Edge separation
-        marginx: 100,     // Larger margins
-        marginy: 100,
-        ranker: 'network-simplex', // Best algorithm for minimizing crossings
+        nodeHeight: 180,
+        nodesep: 250,     // Wide horizontal spacing to prevent crowding
+        ranksep: 350,     // Large vertical spacing for clear edge paths
+        edgesep: 80,      // Increased edge separation
+        marginx: 120,     // Larger margins
+        marginy: 120,
+        ranker: 'network-simplex', // Best for minimizing edge crossings
       }
     );
 
@@ -169,27 +170,6 @@ function ResearchPapersContent() {
     setEdges(layoutedEdges);
     hasLayoutedRef.current = true;
   }, [reactFlowNodes, reactFlowEdges, data]);
-
-  // Fit view after layout
-  useEffect(() => {
-    if (nodes.length > 0 && reactFlowInstance && hasLayoutedRef.current) {
-      const timer = setTimeout(() => {
-        try {
-          reactFlowInstance.fitView({
-            padding: 0.2,
-            duration: 600,
-            includeHiddenNodes: false,
-            minZoom: 0.4,
-            maxZoom: 1.5,
-          });
-        } catch (error) {
-          // Silently handle fitView errors
-        }
-      }, 200);
-
-      return () => clearTimeout(timer);
-    }
-  }, [nodes, reactFlowInstance]);
 
   // Handle node changes (similar to DAGView)
   const onNodesChange = useCallback((changes: NodeChange[]) => {
@@ -217,7 +197,34 @@ function ResearchPapersContent() {
 
   const onEdgesChange = useCallback((changes: EdgeChange[]) => {
     setEdges((eds) => applyEdgeChanges(changes, eds));
-  }, []);
+    
+    // Handle edge removal in dev mode
+    if (isDev && data) {
+      changes.forEach((change) => {
+        if (change.type === 'remove' && change.id) {
+          // Parse edge ID format: "sourceId::targetId"
+          const [sourceId, targetId] = change.id.split('::');
+          
+          // Update data structure to remove dependency
+          setData((prevData) => {
+            if (!prevData) return prevData;
+            return {
+              ...prevData,
+              papers: prevData.papers.map((paper) => {
+                if (paper.id === targetId) {
+                  return {
+                    ...paper,
+                    dependencies: paper.dependencies.filter(dep => dep !== sourceId),
+                  };
+                }
+                return paper;
+              }),
+            };
+          });
+        }
+      });
+    }
+  }, [isDev, data]);
 
   // Handle new connections (in dev mode)
   const onConnect = useCallback(
@@ -232,7 +239,7 @@ function ResearchPapersContent() {
         id: `${source}::${target}`,
         source,
         target,
-        type: 'straight',
+        type: 'smoothstep',
         markerEnd: {
           type: MarkerType.ArrowClosed,
           color: '#6b7280',
@@ -278,13 +285,13 @@ function ResearchPapersContent() {
       {
         direction: 'TB',
         nodeWidth: 280,
-        nodeHeight: 200,
-        nodesep: 150,     // Increased horizontal spacing
-        ranksep: 220,     // Increased vertical spacing
-        edgesep: 50,      // Edge separation
-        marginx: 100,     // Larger margins
-        marginy: 100,
-        ranker: 'network-simplex', // Best algorithm for minimizing crossings
+        nodeHeight: 180,
+        nodesep: 250,     // Wide horizontal spacing to prevent crowding
+        ranksep: 350,     // Large vertical spacing for clear edge paths
+        edgesep: 80,      // Increased edge separation
+        marginx: 120,     // Larger margins
+        marginy: 120,
+        ranker: 'network-simplex', // Best for minimizing edge crossings
       }
     );
 
@@ -375,11 +382,18 @@ function ResearchPapersContent() {
     (nodeId: string) => {
       if (!isDev || !data) return;
 
+      const paperToDelete = data.papers.find((p) => p.id === nodeId);
+      console.log('🗑️ Deleting paper:', paperToDelete?.title, nodeId);
+      console.log('📊 Papers before delete:', data.papers.length);
+
+      const filteredPapers = data.papers.filter((p) => p.id !== nodeId);
+      console.log('📊 Papers after delete:', filteredPapers.length);
+
       setData({
         ...data,
-        papers: data.papers.filter((p) => p.id !== nodeId),
+        papers: filteredPapers,
       });
-
+      
       setNodes((nds) => nds.filter((n) => n.id !== nodeId));
       setEdges((eds) => eds.filter((e) => e.source !== nodeId && e.target !== nodeId));
 
@@ -518,6 +532,7 @@ function ResearchPapersContent() {
             elementsSelectable={true}
             edgesFocusable={true}
             deleteKeyCode={isDev ? ['Backspace', 'Delete'] : undefined}
+            connectionLineType={ConnectionLineType.SmoothStep}
           >
             <Background color="#aaa" gap={16} />
             <Controls />

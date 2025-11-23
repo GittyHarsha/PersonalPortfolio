@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tisoap/react-flow-smart-edge": "^4.0.1",
     "@xyflow/react": "^12.3.2",
     "cors": "^2.8.5",
     "dagre": "^0.8.5",

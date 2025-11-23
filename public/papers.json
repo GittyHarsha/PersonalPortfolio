@@ -37,8 +37,8 @@
       "status": "to_read",
       "priority": "HIGH",
       "dependencies": [
-        "paper-1",
-        "paper-2"
+        "paper-2",
+        "paper-1763876757924"
       ],
       "dagPosition": {
         "x": 1365,
@@ -571,6 +571,194 @@
       "url": "https://arxiv.org/abs/1512.03385",
       "createdAt": "2025-11-17T05:46:42.413Z",
       "updatedAt": "2025-11-17T05:46:50.502Z"
+    },
+    {
+      "id": "paper-1763876497798",
+      "title": "Efficient Estimation of Word Representations in Vector Space",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1763876552566"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/abs/1301.3781",
+      "createdAt": "2025-11-23T05:41:37.798Z",
+      "updatedAt": "2025-11-23T05:41:47.974Z"
+    },
+    {
+      "id": "paper-1763876552566",
+      "title": " A Neural Probabilistic Language Model",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1762684785288"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://jmlr.org/papers/volume3/bengio03a/bengio03a.pdf",
+      "createdAt": "2025-11-23T05:42:32.566Z",
+      "updatedAt": "2025-11-23T05:42:44.141Z"
+    },
+    {
+      "id": "paper-1763876689573",
+      "title": "BERT",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1",
+        "paper-1763876497798",
+        "paper-1763876757924"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/pdf/1810.04805",
+      "createdAt": "2025-11-23T05:44:49.573Z",
+      "updatedAt": "2025-11-23T14:22:53.591Z"
+    },
+    {
+      "id": "paper-1763876757924",
+      "title": "GPT",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf",
+      "createdAt": "2025-11-23T05:45:57.924Z",
+      "updatedAt": "2025-11-23T12:04:42.793Z"
+    },
+    {
+      "id": "paper-1763876901356",
+      "title": "T5",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "to_read",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1763907926504"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/abs/1910.10683",
+      "createdAt": "2025-11-23T05:48:21.356Z",
+      "updatedAt": "2025-11-23T05:48:28.604Z"
+    },
+    {
+      "id": "paper-1763877599067",
+      "title": "EGGROLL",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "reading",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1763884781981",
+        "paper-1763884796803",
+        "paper-1763884817193"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://www.arxiv.org/abs/2511.16652",
+      "createdAt": "2025-11-23T05:59:59.067Z",
+      "updatedAt": "2025-11-23T06:00:32.930Z"
+    },
+    {
+      "id": "paper-1763884781981",
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "to_read",
+      "priority": "MED",
+      "dependencies": [],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/pdf/2106.09685",
+      "createdAt": "2025-11-23T07:59:41.981Z",
+      "updatedAt": "2025-11-23T07:59:51.140Z"
+    },
+    {
+      "id": "paper-1763884796803",
+      "title": "Evolution Strategies as a Scalable Alternative to Reinforcement Learning",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "to_read",
+      "priority": "MED",
+      "dependencies": [],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/pdf/1703.03864",
+      "createdAt": "2025-11-23T07:59:56.803Z",
+      "updatedAt": "2025-11-23T08:00:04.723Z"
+    },
+    {
+      "id": "paper-1763884817193",
+      "title": "Natural Evolution Strategies",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "to_read",
+      "priority": "MED",
+      "dependencies": [],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/pdf/1106.4487",
+      "createdAt": "2025-11-23T08:00:17.193Z",
+      "updatedAt": "2025-11-23T08:00:28.890Z"
+    },
+    {
+      "id": "paper-1763907926504",
+      "title": "RoBERTa: ARobustly Optimized BERT Pretraining Approach",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "reading",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1763876689573"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/pdf/1907.11692",
+      "createdAt": "2025-11-23T14:25:26.504Z",
+      "updatedAt": "2025-11-23T14:25:34.679Z"
     }
   ],
   "topics": [
