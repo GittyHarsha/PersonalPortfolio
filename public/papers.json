@@ -747,7 +747,7 @@
       "authors": "",
       "year": 2025,
       "venue": "",
-      "status": "reading",
+      "status": "completed",
       "priority": "MED",
       "dependencies": [
         "paper-1763876689573"
@@ -758,7 +758,7 @@
       },
       "url": "https://arxiv.org/pdf/1907.11692",
       "createdAt": "2025-11-23T14:25:26.504Z",
-      "updatedAt": "2025-11-23T14:25:34.679Z"
+      "updatedAt": "2025-11-23T17:34:14.588Z"
     }
   ],
   "topics": [
