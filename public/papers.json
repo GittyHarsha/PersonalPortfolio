@@ -696,16 +696,18 @@
       "authors": "",
       "year": 2025,
       "venue": "",
-      "status": "to_read",
+      "status": "completed",
       "priority": "MED",
-      "dependencies": [],
+      "dependencies": [
+        "paper-1764694851971"
+      ],
       "dagPosition": {
         "x": 0,
         "y": 0
       },
       "url": "https://arxiv.org/pdf/2106.09685",
       "createdAt": "2025-11-23T07:59:41.981Z",
-      "updatedAt": "2025-11-23T07:59:51.140Z"
+      "updatedAt": "2025-12-02T17:00:33.798Z"
     },
     {
       "id": "paper-1763884796803",
@@ -759,6 +761,155 @@
       "url": "https://arxiv.org/pdf/1907.11692",
       "createdAt": "2025-11-23T14:25:26.504Z",
       "updatedAt": "2025-11-23T17:34:14.588Z"
+    },
+    {
+      "id": "paper-1764694851971",
+      "title": "INTRINSIC DIMENSIONALITY EXPLAINS THE EFFEC TIVENESS OF LANGUAGE MODEL FINE-TUNING",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1764694895432"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/pdf/2012.13255",
+      "createdAt": "2025-12-02T17:00:51.971Z",
+      "updatedAt": "2025-12-02T17:01:12.139Z"
+    },
+    {
+      "id": "paper-1764694895432",
+      "title": "Measuring the Intrinsic Dimension of Objective Landscapes",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "completed",
+      "priority": "MED",
+      "dependencies": [],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/abs/1804.08838",
+      "createdAt": "2025-12-02T17:01:35.432Z",
+      "updatedAt": "2025-12-02T17:01:51.679Z"
+    },
+    {
+      "id": "paper-1764695244590",
+      "title": "Outrageously Large Neural Networks: The Sparsely-Gated MoE",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "reading",
+      "priority": "MED",
+      "dependencies": [],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/abs/1701.06538",
+      "createdAt": "2025-12-02T17:07:24.590Z",
+      "updatedAt": "2025-12-02T17:07:53.309Z"
+    },
+    {
+      "id": "paper-1764695300893",
+      "title": "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "reading",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1764695244590"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/abs/2101.03961",
+      "createdAt": "2025-12-02T17:08:20.893Z",
+      "updatedAt": "2025-12-02T17:08:37.257Z"
+    },
+    {
+      "id": "paper-1764695364202",
+      "title": "DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "to_read",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1764695300893",
+        "paper-1763876901356"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/abs/2401.06066",
+      "createdAt": "2025-12-02T17:09:24.202Z",
+      "updatedAt": "2025-12-02T17:09:35.322Z"
+    },
+    {
+      "id": "paper-1764695398351",
+      "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "to_read",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1764695364202"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/abs/2405.04434",
+      "createdAt": "2025-12-02T17:09:58.351Z",
+      "updatedAt": "2025-12-02T17:10:07.117Z"
+    },
+    {
+      "id": "paper-1764695462761",
+      "title": "DeepSeek-V3 Technical Report",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "to_read",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1764695398351"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://arxiv.org/abs/2412.19437",
+      "createdAt": "2025-12-02T17:11:02.761Z",
+      "updatedAt": "2025-12-02T17:11:20.865Z"
+    },
+    {
+      "id": "paper-1764695613806",
+      "title": "DeepSeek-V3.2",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "status": "to_read",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1764695462761"
+      ],
+      "dagPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2/blob/main/assets/paper.pdf",
+      "createdAt": "2025-12-02T17:13:33.805Z",
+      "updatedAt": "2025-12-02T17:13:45.824Z"
     }
   ],
   "topics": [
