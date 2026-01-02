@@ -507,7 +507,8 @@
       "status": "to_read",
       "priority": "MED",
       "dependencies": [
-        "paper-1762781990949"
+        "paper-1762781990949",
+        "paper-1762781943320"
       ],
       "dagPosition": {
         "x": 0,
@@ -515,7 +516,7 @@
       },
       "url": "https://arxiv.org/pdf/2511.08923v1",
       "createdAt": "2025-11-14T07:14:02.771Z",
-      "updatedAt": "2025-11-14T07:14:09.181Z"
+      "updatedAt": "2026-01-02T04:41:00.369Z"
     },
     {
       "id": "paper-1763104491280",
@@ -804,7 +805,7 @@
       "authors": "",
       "year": 2025,
       "venue": "",
-      "status": "reading",
+      "status": "completed",
       "priority": "MED",
       "dependencies": [],
       "dagPosition": {
@@ -813,7 +814,9 @@
       },
       "url": "https://arxiv.org/abs/1701.06538",
       "createdAt": "2025-12-02T17:07:24.590Z",
-      "updatedAt": "2025-12-02T17:07:53.309Z"
+      "updatedAt": "2026-01-02T04:45:56.718Z",
+      "description": "",
+      "tags": []
     },
     {
       "id": "paper-1764695300893",
@@ -840,7 +843,7 @@
       "authors": "",
       "year": 2025,
       "venue": "",
-      "status": "to_read",
+      "status": "completed",
       "priority": "MED",
       "dependencies": [
         "paper-1764695300893",
@@ -852,7 +855,9 @@
       },
       "url": "https://arxiv.org/abs/2401.06066",
       "createdAt": "2025-12-02T17:09:24.202Z",
-      "updatedAt": "2025-12-02T17:09:35.322Z"
+      "updatedAt": "2026-01-02T04:55:41.270Z",
+      "description": "",
+      "tags": []
     },
     {
       "id": "paper-1764695398351",
@@ -910,6 +915,25 @@
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2/blob/main/assets/paper.pdf",
       "createdAt": "2025-12-02T17:13:33.805Z",
       "updatedAt": "2025-12-02T17:13:45.824Z"
+    },
+    {
+      "id": "paper-1767329702990",
+      "title": "Hyper-Connections",
+      "authors": "",
+      "year": 2026,
+      "venue": "",
+      "status": "to_read",
+      "priority": "MED",
+      "dependencies": [
+        "paper-1763358402413",
+        "paper-1",
+        "paper-1762686486962"
+      ],
+      "url": "https://arxiv.org/pdf/2409.19606",
+      "description": "improved residual connections",
+      "tags": [],
+      "createdAt": "2026-01-02T04:55:02.990Z",
+      "updatedAt": "2026-01-02T04:55:02.990Z"
     }
   ],
   "topics": [
