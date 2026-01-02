@@ -51,6 +51,20 @@ function buildTopicTree(topics: Topic[], papers: Paper[]): { tree: TopicNode[], 
   return { tree: rootNodes, uncategorized };
 }
 
+// Pre-compute dependent counts for all papers
+function buildDependentCounts(papers: Paper[]): Map<string, number> {
+  const counts = new Map<string, number>();
+  papers.forEach(p => counts.set(p.id, 0));
+  
+  papers.forEach(paper => {
+    paper.dependencies.forEach(depId => {
+      counts.set(depId, (counts.get(depId) || 0) + 1);
+    });
+  });
+  
+  return counts;
+}
+
 function countPapersInTopic(node: TopicNode): number {
   return node.papers.length + node.children.reduce((acc, child) => acc + countPapersInTopic(child), 0);
 }
@@ -58,7 +72,7 @@ function countPapersInTopic(node: TopicNode): number {
 interface TopicSectionProps {
   node: TopicNode;
   depth: number;
-  allPapers: Paper[];
+  dependentCounts: Map<string, number>;
   expandedTopics: Set<string>;
   onToggleTopic: (topicId: string) => void;
   onEditPaper: (paper: Paper) => void;
@@ -70,7 +84,7 @@ interface TopicSectionProps {
 function TopicSection({
   node,
   depth,
-  allPapers,
+  dependentCounts,
   expandedTopics,
   onToggleTopic,
   onEditPaper,
@@ -131,7 +145,7 @@ function TopicSection({
             <PaperListItem
               key={paper.id}
               paper={paper}
-              allPapers={allPapers}
+              dependentCount={dependentCounts.get(paper.id) || 0}
               onEdit={onEditPaper}
               onDelete={onDeletePaper}
               onManageDependencies={onManageDependencies}
@@ -145,7 +159,7 @@ function TopicSection({
             key={child.topic.id}
             node={child}
             depth={depth + 1}
-            allPapers={allPapers}
+            dependentCounts={dependentCounts}
             expandedTopics={expandedTopics}
             onToggleTopic={onToggleTopic}
             onEditPaper={onEditPaper}
@@ -177,6 +191,8 @@ export function TopicTree({
     [topics, papers]
   );
 
+  const dependentCounts = useMemo(() => buildDependentCounts(papers), [papers]);
+
   const toggleTopic = (topicId: string) => {
     setExpandedTopics(prev => {
       const next = new Set(prev);
@@ -199,7 +215,7 @@ export function TopicTree({
           key={node.topic.id}
           node={node}
           depth={0}
-          allPapers={papers}
+          dependentCounts={dependentCounts}
           expandedTopics={expandedTopics}
           onToggleTopic={toggleTopic}
           onEditPaper={onEditPaper}
@@ -256,7 +272,7 @@ export function TopicTree({
                 <PaperListItem
                   key={paper.id}
                   paper={paper}
-                  allPapers={papers}
+                  dependentCount={dependentCounts.get(paper.id) || 0}
                   onEdit={onEditPaper}
                   onDelete={onDeletePaper}
                   onManageDependencies={onManageDependencies}
